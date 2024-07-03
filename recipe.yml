@@ -1,0 +1,8 @@
+name: Storm CMS Content Type - Articles
+description: Recipe to configure Articles content type.
+recipes:
+  - core/recipes/tags_taxonomy
+  - core/recipes/comment_base
+  - storm_cms_content_type_base
+  - storm_cms_media
+  - storm_cms_ct_person
