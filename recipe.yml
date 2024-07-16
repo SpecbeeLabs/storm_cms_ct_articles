@@ -1,8 +1,23 @@
 name: Storm CMS Content Type - Articles
 description: Recipe to configure Articles content type.
 recipes:
-  - core/recipes/tags_taxonomy
   - core/recipes/comment_base
   - storm_cms_content_type_base
   - storm_cms_media
-  - storm_cms_ct_person
+  - storm_cms_person
+install:
+  - field_group
+config:
+  actions:
+    workflows.workflow.editorial:
+      simple_config_update:
+        type_settings:
+          entity_types:
+            node:
+              - ct_article
+    metatag.settings:
+      simple_config_update:
+        entity_type_groups.node.ct_article:
+          - basic
+          - advanced
+          - open_graph
